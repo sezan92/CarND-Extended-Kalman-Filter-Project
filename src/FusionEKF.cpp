@@ -43,6 +43,9 @@ FusionEKF::FusionEKF() {
       1, 1, 0, 0,
       1, 1, 1, 1;
   
+  
+  
+  
   ekf_.F_ = MatrixXd(4, 4);
   ekf_.F_ << 1, 0, 1, 0,
             0, 1, 0, 1,
@@ -159,7 +162,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     cout << Hj_ << endl;
     ekf_.R_ = MatrixXd(3, 3);
     ekf_.R_ << R_radar_;
-    ekf_.H_ = MatrixXd(3, 4);
+    ekf_.H_ = MatrixXd(3,4);
     ekf_.H_ << Hj_;
     cout << ekf_.H_ << endl;
     
